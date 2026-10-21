@@ -1,33 +1,33 @@
-name: Build Deb: Build Deb
+name: Build Deb
 
-on::
-  push::
-    branches: [ "main", "master" ]: [ "main", "master" ]
-  workflow_dispatch::
+on:
+  push:
+    branches: [ "main", "master" ]
+  workflow_dispatch:
 
-jobs::
-  build::
-    runs-on: macos-latest: macos-latest
-    steps::
-      - name: Checkout repositoryname: Checkout repository
-        uses: actions/checkout@v4: actions/checkout@v4
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
         
-      - name: Setup Theosname: Setup Theos
-        run: |: |
+      - name: Setup Theos
+        run: |
           export THEOS=$HOME/theos
           git clone --recursive https://github.com/theos/theos.git $THEOS
           echo "THEOS=$HOME/theos" >> $GITHUB_ENV
           
-      - name: Install ldidname: Install ldid
-        run: brew install ldid: brew install ldid
+      - name: Install ldid
+        run: brew install ldid
         
-      - name: Build Packagename: Build Package
-        run: |: |
+      - name: Build Package
+        run: |
           make clean
           make package FINALPACKAGE=1
           
-      - name: Upload Debname: Upload Deb
-        uses: actions/upload-artifact@v4: actions/upload-artifact@v4
-        with::
-          name: deb: deb
-          path: packages/*.deb: packages/*.deb
+      - name: Upload Deb
+        uses: actions/upload-artifact@v4
+        with:
+          name: deb
+          path: packages/*.deb
