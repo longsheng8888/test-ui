@@ -1,1 +1,9 @@
-
+Package: com.test.testui
+Name: TestUI
+Version: 1.0.0
+Architecture: iphoneos-arm64
+Description: 界面测试
+Maintainer: you
+Author: you
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
