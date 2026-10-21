@@ -1,12 +1,9 @@
-BUNDLE_NAME = testuiprefs
-testuiprefs_FILES = TestRootListController.m
-testuiprefs_FRAMEWORKS = UIKit
-testuiprefs_CFLAGS = -fobjc-arc
-
-# 强制写入 roothide 真实环境
-testuiprefs_INSTALL_PATH = /Library/PreferenceBundles
+TARGET := iphone:clang:latest:14.0
+ARCHS := arm64 arm64e
+THEOS_PACKAGE_SCHEME = roothide
 
 include $(THEOS)/makefiles/common.mk
-include $(THEOS_MAKE_PATH)/bundle.mk
 
-testuiprefs_RESOURCE_DIRS = Resources
+SUBPROJECTS += prefs
+
+include $(THEOS_MAKE_PATH)/aggregate.mk
