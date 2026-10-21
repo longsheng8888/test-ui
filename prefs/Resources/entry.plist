@@ -1,8 +1,17 @@
-{
-    entry = {
-    };
-}
-        detail = "TestRootListController";
-        label = "界面测试";
-    };
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>entry</key>
+    <dict>
+        <key>bundle</key>
+        <string>testuiprefs</string>
+        <key>cell</key>
+        <string>PSLinkCell</string>
+        <key>detail</key>
+        <string>TestRootListController</string>
+        <key>label</key>
+        <string>界面测试</string>
+    </dict>
+</dict>
+</plist>
