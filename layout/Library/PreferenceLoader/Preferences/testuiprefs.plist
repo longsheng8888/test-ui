@@ -1,0 +1,8 @@
+{
+    entry = {
+        bundle = "testuiprefs";
+        cell = PSLinkCell;
+        detail = "TestRootListController";
+        label = "界面测试";
+    };
+}
