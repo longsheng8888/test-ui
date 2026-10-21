@@ -9,8 +9,9 @@ jobs:
   build:
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v3
-      
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        
       - name: Setup Theos
         run: |
           export THEOS=$HOME/theos
@@ -26,7 +27,7 @@ jobs:
           make package FINALPACKAGE=1
           
       - name: Upload Deb
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: deb
           path: packages/*.deb
